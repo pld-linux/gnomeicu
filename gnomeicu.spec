@@ -1,7 +1,7 @@
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK.
 Name:		gnomeicu
 Version:	0.68
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Communications
 URL:		http://gnomeicu.gdev.net/
@@ -27,6 +27,7 @@ contribute, please contact Jeremy Wise <jwise@pathwaynet.com>.
 %setup -q
 
 %build
+gettextize --force --copy
 # seems as if xss support is broken on alpha :-(
 %configure \
 %ifarch alpha
