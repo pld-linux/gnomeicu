@@ -45,7 +45,7 @@ LDFLAGS="-s"; export LDFLAGS
 	--with-statusmenu \
 	--enable-compile-warnings=no
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
