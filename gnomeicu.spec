@@ -11,6 +11,8 @@ Group(pl):	Aplikacje/Komunikacja
 Source0:	http://download.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://gnomeicu.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gnome-libs-devel >= 1.2.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -38,7 +40,9 @@ protocole d'ICQ.
 %patch0 -p1
 
 %build
-automake
+aclocal -I macros
+autoconf
+automake -a -c
 gettextize --force --copy
 # seems as if xss support is broken on alpha :-(
 %configure \
