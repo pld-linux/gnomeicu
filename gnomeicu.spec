@@ -7,7 +7,7 @@ Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
-Source0:	http://download.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
 # Source0-md5:	1286c2d250562fc416836882b89bcdf1
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://gnomeicu.sourceforge.net/
@@ -48,7 +48,7 @@ rm -f missing
 %{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
-gettextize --force --copy
+%{__gettextize}
 # seems as if xss support is broken on alpha :-(
 %configure \
 %ifarch alpha
