@@ -1,0 +1,21 @@
+diff -Nur gnomeicu-0.94.1/doc/C/Makefile.am gnomeicu-0.94.1.new/doc/C/Makefile.am
+--- gnomeicu-0.94.1/doc/C/Makefile.am	Sat Oct 14 06:50:19 2000
++++ gnomeicu-0.94.1.new/doc/C/Makefile.am	Tue Oct 31 09:30:56 2000
+@@ -14,7 +14,7 @@
+ 	-(cd $(srcdir); db2html gnomeicu.sgml)
+ 
+ dist-hook:
+-	-$(mkinstalldirs) $(distdir)/gnomeicu
++	-$(mkinstalldirs) $(DESTDIR)$(distdir)/gnomeicu
+ 	-cp $(srcdir)/gnomeicu/*.html $(distdir)/gnomeicu
+ 	-cp $(srcdir)/gnomeicu/*.css $(distdir)/gnomeicu
+ 
+@@ -32,7 +32,7 @@
+ 		basefile=`echo $$file | sed -e 's,^.*/,,'`; \
+ 		$(INSTALL_DATA) -D $$file $(DESTDIR)$(gnomeicu_helpdir)/images/$$basefile; \
+ 		done)
+-	$(mkinstalldirs) $(gnomeicu_helpdir)/images
++	$(mkinstalldirs) $(DESTDIR)$(gnomeicu_helpdir)/images
+ 	-for file in $(srcdir)/gnomeicu/*.html $(srcdir)/gnomeicu/*.css; do \
+         basefile=`basename $$file`; \
+         $(INSTALL_DATA) $$file $(gnomeicu_helpdir);\
