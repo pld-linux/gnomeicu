@@ -11,16 +11,16 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Source0-md5:	1286c2d250562fc416836882b89bcdf1
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://gnomeicu.sourceforge.net/
+BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-libs-devel >= 1.2.0
-BuildRequires:	ORBit-devel >= 0.4.0
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	gnome-core-devel >= 1.2.0
 BuildRequires:	gettext-devel
-Requires:	gnome-libs >= 1.2.0
+BuildRequires:	gnome-core-devel >= 1.2.0
+BuildRequires:	gnome-libs-devel >= 1.2.0
+BuildRequires:	gtk+-devel >= 1.2.0
 Requires:	ORBit >= 0.5.0
 Requires:	gtk+ >= 1.2.0
+Requires:	gnome-libs >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
