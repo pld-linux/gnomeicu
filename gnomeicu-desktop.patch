@@ -1,0 +1,58 @@
+diff -ur gnomeicu-0.96.1.orig/src/GnomeICU.desktop gnomeicu-0.96.1/src/GnomeICU.desktop
+--- gnomeicu-0.96.1.orig/src/GnomeICU.desktop	Thu Oct 26 22:08:08 2000
++++ gnomeicu-0.96.1/src/GnomeICU.desktop	Wed Dec 24 23:17:43 2003
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Name=GnomeICU
+-Name[pt_BR]=GnomeICU
+ Name[da]=GnomeICU
+ Name[el]=GnomeICU
+ Name[fi]=GnomeICU
+@@ -11,29 +10,31 @@
+ Name[lt]=GnomeICU
+ Name[nl]=GnomeICU
+ Name[no]=GnomeICU
++Name[pt_BR]=GnomeICU
+ Name[sv]=GnomeICU
+ Name[tr]=GnomeICU
+ Name[uk]=GnomeICU
+-Comment=Gnome Internet Communication Utility
+-Comment[pt_BR]=Utilitário Gnome de Comunicação na Internet
+-Comment[da]=GNOME internetkommunikationsværktøj
+-Comment[el]=Ğñüãñáììá ôïõ GNOME ãéá åğéêïéíùíßá ICQ
++Comment=GNOME Internet Communication Utility
++Comment[da]=GNOME internetkommunikationsvÃ¦rktÃ¸j
++Comment[el]=Î ÏÏŒÎ³ÏÎ±Î¼Î¼Î± Ï„Î¿Ï… GNOME Î³Î¹Î± ÎµÏ€Î¹ÎºÎ¿Î¹Î½Ï‰Î½Î¯Î± ICQ
+ Comment[es]=Programa GNOME para comunicaciones ICQ
+ Comment[fi]=Gnomen ICQ-ohjelma
+-Comment[fr]=Interface Réseau ICQ
+-Comment[gl]=Utilidade de Comunicación en Internet de Gnome
+-Comment[it]=Utilità Gnome per la Comunicazione Internet
+-Comment[ja]=GNOMEÈÇICQ
+-Comment[lt]=Gnome bendravimo per ICQ programa
+-Comment[nl]=Gnome ICU Communicatie Programma
++Comment[fr]=Interface RÃ©seau ICQ
++Comment[gl]=Utilidade de ComunicaciÃ³n en Internet de GNOME
++Comment[it]=UtilitÃ  GNOME per la Comunicazione Internet
++Comment[ja]=GNOMEç‰ˆICQ
++Comment[lt]=GNOME bendravimo per ICQ programa
++Comment[nl]=GNOME ICU Communicatie Programma
+ Comment[no]=ICQ-nettverksgrensesnitt
++Comment[pl]=NarzÄ™dzie GNOME do Å‚Ä…cznoÅ›ci internetowej
++Comment[pt_BR]=UtilitÃ¡rio GNOME de ComunicaÃ§Ã£o na Internet
+ Comment[sv]=ICQ-kommunikationsverktyg
+-Comment[tr]=Gnome'un ICQ uygulaması
+-Comment[uk]=ëÌ¦¤ÎÔ ICQ
+-Comment[wa]=Programe di GNOME po poleur comuniker avou d' ôtès djins so ICQ
++Comment[tr]=GNOME'un ICQ uygulamasÄ±
++Comment[uk]=ĞšĞ»Ñ–Ñ”Ğ½Ñ‚ ICQ
++Comment[wa]=Programe di GNOME po poleur comuniker avou d' Ã´tÃ¨s djins so ICQ
+ Exec=gnomeicu --activate-goad-server=gnomeicu
+ Icon=gnome-gnomeicu.xpm
+-Terminal=0
++Terminal=false
+ Type=Application
+-
+-
++Encoding=UTF-8
++# vi: encoding=utf-8
