@@ -1,22 +1,23 @@
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK
 Summary(fr):	Programme pour la communication sur Internet
 Name:		gnomeicu
-Version:	0.93
-Release:	4
+Version:	0.94.1
+Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	ftp://gnomeicu.gdev.net/pub/gnomeicu/%{name}-%{version}.tar.gz
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://gnomeicu.gdev.net/
-BuildRequires:	gnome-libs-devel >= 1.0.0
+BuildRequires:	gnome-libs-devel >= 1.2.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	gnome-core-devel >= 1.1.5
+BuildRequires:	gnome-core-devel >= 1.2.0
 BuildRequires:	gettext-devel
-Requires:	gnome-libs >= 1.0.0
-Requires:	ORBit >= 0.4.0
+Requires:	gnome-libs >= 1.2.0
+Requires:	ORBit >= 0.5.0
 Requires:	gtk+ >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,8 +35,10 @@ protocole d'ICQ.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+automake
 gettextize --force --copy
 # seems as if xss support is broken on alpha :-(
 %configure \
@@ -65,7 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc {AUTHORS,ChangeLog,NEWS,README,TODO}.gz
 %{_sysconfdir}/CORBA/servers/GnomeICU.gnorba
 %config %{_sysconfdir}/sound/events/GnomeICU.soundlist
-%attr(755,root,root) %{_bindir}/gnomeicu
+%attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Network/ICQ/GnomeICU.desktop
-%{_datadir}/pixmaps/*
+%{_datadir}/pixmaps/*.xpm
+%{_datadir}/pixmaps/gnomeicu
 %{_datadir}/sounds/gnomeicu
