@@ -10,6 +10,7 @@ Source:		ftp://gnomeicu.gdev.net/pub/gnomeicu/%{name}-%{version}.tar.gz
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	gnome-core-devel 
 BuildRequires:	gettext-devel
 Requires:	gnome-libs >= 1.0.0
 Requires:	ORBit >= 0.4.0
