@@ -1,5 +1,6 @@
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK
 Summary(fr):	Programme pour la communication sur Internet
+Summary(pl):	GnomeICU - klon Mirabilis ICQ napisany z u¿yciem GTK
 Name:		gnomeicu
 Version:	0.96.1
 Release:	1
@@ -34,6 +35,11 @@ replacement for the JavaICQ, which is slow and buggy.
 %description -l fr
 gnomeICU est un programme de communication par Internet qui utilise le
 protocole d'ICQ.
+
+%description -l pl
+GnomeICU to klon Mirabilis ICQ napisany z u¿yciem GTK. Oryginalne
+¼ród³± pochodz± z mICQ Matta Smitha. Ten program ma byæ zamiennikiem
+JavaICQ, które jest wolne i ma b³êdy.
 
 %prep
 %setup -q
