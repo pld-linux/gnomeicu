@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {AUTHORS,ChangeLog,NEWS,README,TODO}.gz
+%doc *.gz
 %{_sysconfdir}/X11/GNOME/CORBA/servers/GnomeICU.gnorba
 %config %{_sysconfdir}/X11/GNOME/sound/events/GnomeICU.soundlist
 %attr(755,root,root) %{_bindir}/*
