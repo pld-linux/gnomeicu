@@ -72,6 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_sysconfdir}/X11/GNOME/sound/events/GnomeICU.soundlist
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Network/ICQ/GnomeICU.desktop
-%{_datadir}/pixmaps/*.xpm
-%{_datadir}/pixmaps/gnomeicu
+%{_pixmapsdir}/*.xpm
+%{_pixmapsdir}/gnomeicu
 %{_datadir}/sounds/gnomeicu
