@@ -77,5 +77,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Network/ICQ/GnomeICU.desktop
 %{_pixmapsdir}/*.xpm
-%{_pixmapsdir}/gnomeicu
+%{_pixmapsdir}/*
 %{_datadir}/sounds/gnomeicu
