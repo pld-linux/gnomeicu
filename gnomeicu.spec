@@ -1,26 +1,26 @@
+#
+%bcond_without  gtkspell	# without gtkspell support
+#
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK
 Summary(fr):	Programme pour la communication sur Internet
 Summary(pl):	GnomeICU - klon Mirabilis ICQ napisany z u¿yciem GTK
 Name:		gnomeicu
-Version:	0.96.1
-Release:	3
+Version:	0.99.5
+Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	1286c2d250562fc416836882b89bcdf1
-Patch0:		%{name}-DESTDIR.patch
+# Source0-md5:	59ff902171a14ad37896f6661ddedb7a
+Patch0:		%{name}-desktop.patch
 URL:		http://gnomeicu.sourceforge.net/
-BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-core-devel >= 1.2.0
-BuildRequires:	gnome-libs-devel >= 1.2.0
-BuildRequires:	gtk+-devel >= 1.2.0
-Requires:	ORBit >= 0.5.0
-Requires:	gtk+ >= 1.2.0
-Requires:	gnome-libs >= 1.2.0
+BuildRequires:	gtk+2-devel >= 2.0
+%{?with_gtkspell:BuildRequires: gtkspell-devel >= 2.0}
+BuildRequires:	libgnomeui >= 2.0
+BuildRequires:	libxml2 >= 2.4.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +34,7 @@ protocole d'ICQ.
 
 %description -l pl
 GnomeICU to klon Mirabilis ICQ napisany z u¿yciem GTK. Oryginalne
-¼ród³± pochodz± z mICQ Matta Smitha. Ten program ma byæ zamiennikiem
+¼ród³a pochodz± z mICQ Matta Smitha. Ten program ma byæ zamiennikiem
 JavaICQ, które jest wolne i ma b³êdy.
 
 %prep
@@ -42,41 +42,44 @@ JavaICQ, które jest wolne i ma b³êdy.
 %patch0 -p1
 
 %build
-rm -f missing
-%{__aclocal} -I macros
+glib-gettextize --copy --force
+%{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
-%{__gettextize}
 # seems as if xss support is broken on alpha :-(
 %configure \
 %ifarch alpha
 	--without-xss \
 %endif
-	--with-statusmenu \
-	--enable-compile-warnings=no
-
+	%{?with_gtkspell:--enable-gtkspell}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	Utilitiesdir=%{_applnkdir}/Network/Communications \
-	gnorbadir=%{_sysconfdir}/X11/GNOME/CORBA/servers \
-	soundlistdir=%{_sysconfdir}/X11/GNOME/sound/events
 
-%find_lang %{name} --with-gnome
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
+%postun -p /usr/bin/scrollkeeper-update
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
-%{_sysconfdir}/X11/GNOME/CORBA/servers/GnomeICU.gnorba
-%config(noreplace) %verify(not mtime md5 size) %{_sysconfdir}/X11/GNOME/sound/events/GnomeICU.soundlist
+%doc AUTHORS ChangeLog HACKING MAINTAINERS NEWS README README.SOCKS TODO
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Network/Communications/GnomeICU.desktop
-%{_pixmapsdir}/*
+%{_sysconfdir}/gconf/schemas/*
+%{_sysconfdir}/sound/events/*
 %{_datadir}/sounds/gnomeicu
 %{_datadir}/gnomeicu
+%{_omf_dest_dir}/%{name}
+%{_desktopdir}/*.desktop
+%{_pixmapsdir}/*
