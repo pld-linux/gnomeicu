@@ -31,11 +31,11 @@ the JavaICQ, which is slow and buggy.
 %build
 gettextize --force --copy
 LDFLAGS="-s"; export LDFLAGS
+# seems as if xss support is broken on alpha :-(
 %configure \
 %ifarch alpha
 	--without-xss \
 %endif
-# seems as if xss support is broken on alpha :-(
 	--enable-compile-warnings=no
 
 make
