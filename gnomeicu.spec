@@ -17,7 +17,7 @@ Requires:	gnome-libs >= 1.0.0
 Requires:	ORBit >= 0.4.0
 Requires:	gtk+ >= 1.2.0
 URL:		http://gnomeicu.gdev.net/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc
