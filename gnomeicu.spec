@@ -44,7 +44,8 @@ JavaICQ, które jest wolne i ma b³êdy.
 %patch0 -p1
 
 %build
-aclocal -I macros
+rm -f missing
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 gettextize --force --copy
@@ -68,14 +69,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome
 
-gzip -9nf AUTHORS ChangeLog NEWS README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README TODO
 %{_sysconfdir}/X11/GNOME/CORBA/servers/GnomeICU.gnorba
 %config(noreplace) %verify(not mtime md5 size) %{_sysconfdir}/X11/GNOME/sound/events/GnomeICU.soundlist
 %attr(755,root,root) %{_bindir}/*
