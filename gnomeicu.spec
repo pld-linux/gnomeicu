@@ -3,7 +3,7 @@ Summary(fr):	Programme pour la communication sur Internet
 Summary(pl):	GnomeICU - klon Mirabilis ICQ napisany z u¿yciem GTK
 Name:		gnomeicu
 Version:	0.96.1
-Release:	1
+Release:	3
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
