@@ -1,5 +1,6 @@
 #
-%bcond_without  gtkspell	# without gtkspell support
+%bcond_without	gtkspell	# without gtkspell support
+%bcond_with	applet		# enable applet support
 #
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK
 Summary(fr):	Programme pour la communication sur Internet
@@ -10,17 +11,26 @@ Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
 # Source0-md5:	59ff902171a14ad37896f6661ddedb7a
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-locale-names.patch
 URL:		http://gnomeicu.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.0
-%{?with_gtkspell:BuildRequires: gtkspell-devel >= 2.0}
-BuildRequires:	libgnomeui >= 2.0
-BuildRequires:	libxml2 >= 2.4.7
+%{?with_applet:BuildRequires:	gnome-panel-devel >= 2.0.0}
+BuildRequires:	gtk+2-devel >= 1:2.2.0
+%{?with_gtkspell:BuildRequires: gtkspell-devel >= 2.0.4}
+BuildRequires:	libgnomeui-devel >= 2.0.0
+BuildRequires:	libxml2-devel >= 2.4.7
+BuildRequires:	pkgconfig
+BuildRequires:	scrollkeeper >= 0.3.5
+Requires(post):	GConf2
+Requires(post,postun):	scrollkeeper >= 0.3.5
+Requires:	gtk+2 >= 1:2.2.0
+Requires:	libxml2 >= 2.4.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,6 +50,9 @@ JavaICQ, które jest wolne i ma b³êdy.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 glib-gettextize --copy --force
@@ -52,6 +65,7 @@ glib-gettextize --copy --force
 %ifarch alpha
 	--without-xss \
 %endif
+	%{?with_applet:--enable-applet} \
 	%{?with_gtkspell:--enable-gtkspell}
 %{__make}
 
