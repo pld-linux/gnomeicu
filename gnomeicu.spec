@@ -22,7 +22,6 @@ Requires:	ORBit >= 0.5.0
 Requires:	gtk+ >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc
 
 %description
