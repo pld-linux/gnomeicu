@@ -23,8 +23,6 @@ Requires:	gtk+ >= 1.2.0
 Requires:	gnome-libs >= 1.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir	/etc
-
 %description
 GnomeICU is a clone of Mirabilis' popular ICQ written with GTK. The
 original source was taken from Matt Smith's mICQ. This is ment as a
