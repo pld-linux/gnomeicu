@@ -7,7 +7,7 @@ Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 # Source0-md5:	1286c2d250562fc416836882b89bcdf1
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://gnomeicu.sourceforge.net/
