@@ -46,7 +46,7 @@ JavaICQ, które jest wolne i ma b³êdy.
 %build
 aclocal -I macros
 autoconf
-automake -a -c
+automake -a -c -f
 gettextize --force --copy
 # seems as if xss support is broken on alpha :-(
 %configure \
