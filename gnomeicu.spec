@@ -42,6 +42,7 @@ LDFLAGS="-s"; export LDFLAGS
 %ifarch alpha
 	--without-xss \
 %endif
+	--with-statusmenu \
 	--enable-compile-warnings=no
 
 make
