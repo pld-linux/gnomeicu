@@ -2,7 +2,7 @@ Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK
 Summary(fr):	Programme pour la communication sur Internet
 Name:		gnomeicu
 Version:	0.95.3
-Release:	1
+Release:	2
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
@@ -58,7 +58,7 @@ gettextize --force --copy
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Utilitiesdir=%{_applnkdir}/Network/ICQ \
+	Utilitiesdir=%{_applnkdir}/Network/Communications \
 	gnorbadir=%{_sysconfdir}/X11/GNOME/CORBA/servers \
 	soundlistdir=%{_sysconfdir}/X11/GNOME/sound/events
 
@@ -75,6 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/X11/GNOME/CORBA/servers/GnomeICU.gnorba
 %config %{_sysconfdir}/X11/GNOME/sound/events/GnomeICU.soundlist
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Network/ICQ/GnomeICU.desktop
+%{_applnkdir}/Network/Communications/GnomeICU.desktop
 %{_pixmapsdir}/*
 %{_datadir}/sounds/gnomeicu
