@@ -1,58 +1,16 @@
-diff -ur gnomeicu-0.96.1.orig/src/GnomeICU.desktop gnomeicu-0.96.1/src/GnomeICU.desktop
---- gnomeicu-0.96.1.orig/src/GnomeICU.desktop	Thu Oct 26 22:08:08 2000
-+++ gnomeicu-0.96.1/src/GnomeICU.desktop	Wed Dec 24 23:17:43 2003
-@@ -1,6 +1,5 @@
- [Desktop Entry]
- Name=GnomeICU
--Name[pt_BR]=GnomeICU
- Name[da]=GnomeICU
- Name[el]=GnomeICU
- Name[fi]=GnomeICU
-@@ -11,29 +10,31 @@
- Name[lt]=GnomeICU
- Name[nl]=GnomeICU
- Name[no]=GnomeICU
-+Name[pt_BR]=GnomeICU
- Name[sv]=GnomeICU
- Name[tr]=GnomeICU
- Name[uk]=GnomeICU
--Comment=Gnome Internet Communication Utility
--Comment[pt_BR]=Utilit·rio Gnome de ComunicaÁ„o na Internet
--Comment[da]=GNOME internetkommunikationsvÊrkt¯j
--Comment[el]=–Ò¸„Ò·ÏÏ· ÙÔı GNOME „È· ÂÈÍÔÈÌ˘Ìﬂ· ICQ
-+Comment=GNOME Internet Communication Utility
-+Comment[da]=GNOME internetkommunikationsv√¶rkt√∏j
-+Comment[el]=Œ†œÅœåŒ≥œÅŒ±ŒºŒºŒ± œÑŒøœÖ GNOME Œ≥ŒπŒ± ŒµœÄŒπŒ∫ŒøŒπŒΩœâŒΩŒØŒ± ICQ
- Comment[es]=Programa GNOME para comunicaciones ICQ
- Comment[fi]=Gnomen ICQ-ohjelma
--Comment[fr]=Interface RÈseau ICQ
--Comment[gl]=Utilidade de ComunicaciÛn en Internet de Gnome
--Comment[it]=Utilit‡ Gnome per la Comunicazione Internet
--Comment[ja]=GNOME»«ICQ
--Comment[lt]=Gnome bendravimo per ICQ programa
--Comment[nl]=Gnome ICU Communicatie Programma
-+Comment[fr]=Interface R√©seau ICQ
-+Comment[gl]=Utilidade de Comunicaci√≥n en Internet de GNOME
-+Comment[it]=Utilit√† GNOME per la Comunicazione Internet
-+Comment[ja]=GNOMEÁâàICQ
-+Comment[lt]=GNOME bendravimo per ICQ programa
-+Comment[nl]=GNOME ICU Communicatie Programma
- Comment[no]=ICQ-nettverksgrensesnitt
-+Comment[pl]=Narzƒôdzie GNOME do ≈ÇƒÖczno≈õci internetowej
-+Comment[pt_BR]=Utilit√°rio GNOME de Comunica√ß√£o na Internet
- Comment[sv]=ICQ-kommunikationsverktyg
--Comment[tr]=Gnome'un ICQ uygulamas˝
--Comment[uk]=ÎÃ¶§Œ‘ ICQ
--Comment[wa]=Programe di GNOME po poleur comuniker avou d' ÙtËs djins so ICQ
-+Comment[tr]=GNOME'un ICQ uygulamasƒ±
-+Comment[uk]=–ö–ª—ñ—î–Ω—Ç ICQ
-+Comment[wa]=Programe di GNOME po poleur comuniker avou d' √¥t√®s djins so ICQ
- Exec=gnomeicu --activate-goad-server=gnomeicu
- Icon=gnome-gnomeicu.xpm
+diff -urN gnomeicu-0.99.5.orig/GnomeICU.desktop.in gnomeicu-0.99.5.new/GnomeICU.desktop.in
+--- gnomeicu-0.99.5.orig/GnomeICU.desktop.in	2003-04-16 08:07:28.000000000 +0200
++++ gnomeicu-0.99.5.new/GnomeICU.desktop.in	2004-07-16 22:52:51.781981040 +0200
+@@ -3,9 +3,10 @@
+ _Comment=Communicate with your friends
+ Exec=gnomeicu
+ Icon=gnome-gnomeicu.png
 -Terminal=0
 +Terminal=false
  Type=Application
--
--
+-Categories=Application;Network;
 +Encoding=UTF-8
-+# vi: encoding=utf-8
++Categories=GTK;GNOME;Network;InstantMessaging;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=GnomeICU
+ X-GNOME-Bugzilla-Component=
