@@ -1,8 +1,8 @@
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK
 Summary(fr):	Programme pour la communication sur Internet
 Name:		gnomeicu
-Version:	0.95.3
-Release:	2
+Version:	0.96
+Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
