@@ -1,0 +1,11 @@
+--- gnomeicu-0.99.5/configure.in.orig	2004-03-28 22:21:53.000000000 +0200
++++ gnomeicu-0.99.5/configure.in	2004-07-18 00:05:36.603149654 +0200
+@@ -72,7 +72,7 @@
+ GETTEXT_PACKAGE=gnomeicu
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Name of gettext package])
+-ALL_LINGUAS="am az be bg ca cs da de el en_CA en_GB es eu fi fr ga gl he hr hu it ja ko lt lv mk ml ms nl nn no pl pt pt_BR ro ru sk sl sr sr@Latn sv th tr uk vi zh_CN zh_TW"
++ALL_LINGUAS="am az be bg ca cs da de el en_CA en_GB es eu fi fr ga gl he hr hu it ja ko lt lv mk ml ms nl nn nb pl pt pt_BR ro ru sk sl sr sr@Latn sv th tr uk vi zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ GNOME_COMPILE_WARNINGS
