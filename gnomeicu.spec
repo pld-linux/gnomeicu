@@ -7,7 +7,7 @@ License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
 Group(pl):	Aplikacje/Komunikacja
-Source:		ftp://gnomeicu.gdev.net/pub/gnomeicu/%{name}-%{version}.tar.gz
+Source0:	ftp://gnomeicu.gdev.net/pub/gnomeicu/%{name}-%{version}.tar.gz
 URL:		http://gnomeicu.gdev.net/
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
@@ -23,9 +23,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	/etc
 
 %description
-GnomeICU is a clone of Mirabilis' popular ICQ written with GTK. The original
-source was taken from Matt Smith's mICQ. This is ment as a replacement for
-the JavaICQ, which is slow and buggy.
+GnomeICU is a clone of Mirabilis' popular ICQ written with GTK. The
+original source was taken from Matt Smith's mICQ. This is ment as a
+replacement for the JavaICQ, which is slow and buggy.
 
 %description -l fr
 gnomeICU est un programme de communication par Internet qui utilise le
@@ -55,7 +55,7 @@ make install \
 
 %find_lang %{name} --with-gnome
 
-gzip -9fn AUTHORS ChangeLog NEWS README TODO
+gzip -9nf AUTHORS ChangeLog NEWS README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
