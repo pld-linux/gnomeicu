@@ -3,12 +3,15 @@ Summary(fr):	Programme pour la communication sur Internet
 Summary(pl):	GnomeICU - klon Mirabilis ICQ napisany z u¿yciem GTK
 Name:		gnomeicu
 Version:	0.96.1
-Release:	1
+Release:	2
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
 Source0:	http://download.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
+# Source0-md5:	1286c2d250562fc416836882b89bcdf1
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-ac.patch
+Patch2:		%{name}-desktop.patch
 URL:		http://gnomeicu.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -42,6 +45,8 @@ JavaICQ, które jest wolne i ma b³êdy.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 aclocal -I macros
@@ -68,14 +73,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name} --with-gnome
 
-gzip -9nf AUTHORS ChangeLog NEWS README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README TODO
 %{_sysconfdir}/X11/GNOME/CORBA/servers/GnomeICU.gnorba
 %config(noreplace) %verify(not mtime md5 size) %{_sysconfdir}/X11/GNOME/sound/events/GnomeICU.soundlist
 %attr(755,root,root) %{_bindir}/*
