@@ -3,45 +3,46 @@ Name:		gnomeicu
 Version:	0.68
 Release:	3
 License:	GPL
+Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
-URL:		http://gnomeicu.gdev.net/
+Group(pl):	Aplikacje/Komunikacja
 Source:		ftp://gnomeicu.gdev.net/pub/gnomeicu/%{name}-%{version}.tar.gz
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	ORBit-devel >= 0.4.0
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	gettext-devel
 Requires:	gnome-libs >= 1.0.0
 Requires:	ORBit >= 0.4.0
 Requires:	gtk+ >= 1.2.0
+URL:		http://gnomeicu.gdev.net/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc
 
 %description
-GnomeICU is a clone of Mirabilis' popular ICQ written with GTK. The 
-original source was taken from Matt Smith's mICQ.  This is ment as a 
-replacement for the JavaICQ, which is slow and buggy.  If you would like to 
-contribute, please contact Jeremy Wise <jwise@pathwaynet.com>.    
+GnomeICU is a clone of Mirabilis' popular ICQ written with GTK. The original
+source was taken from Matt Smith's mICQ. This is ment as a replacement for
+the JavaICQ, which is slow and buggy.
 
 %prep
 %setup -q
 
 %build
 gettextize --force --copy
-# seems as if xss support is broken on alpha :-(
+LDFLAGS="-s"; export LDFLAGS
 %configure \
 %ifarch alpha
 	--without-xss \
 %endif
+# seems as if xss support is broken on alpha :-(
 	--enable-compile-warnings=no
 
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make \
-	DESTDIR=$RPM_BUILD_ROOT \
-	install 
+make DESTDIR=$RPM_BUILD_ROOT install 
 
 %find_lang %{name} --with-gnome
 
@@ -59,5 +60,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applets/Network/GnomeICU.desktop
 %{_datadir}/pixmaps/*
 %{_datadir}/sounds/gnomeicu/*
-#/share/gnome/help/gnomeicu/*
-#/share/locale/*/*/*
