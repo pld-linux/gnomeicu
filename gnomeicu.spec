@@ -3,8 +3,8 @@
 %bcond_with	applet		# enable applet support
 #
 Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK+
-Summary(fr.UTF-8):   Programme pour la communication sur Internet
-Summary(pl.UTF-8):   GnomeICU - klon Mirabilis ICQ napisany z użyciem GTK+
+Summary(fr.UTF-8):	Programme pour la communication sur Internet
+Summary(pl.UTF-8):	GnomeICU - klon Mirabilis ICQ napisany z użyciem GTK+
 Name:		gnomeicu
 Version:	0.99.5
 Release:	2
