@@ -1,0 +1,6 @@
+- added Vendor field,
+- added "BuildRequires: gettext-devel",
+- added Group(pl),
+- added passing LDFLAGS="-s" to ./configure environment in %build (now
+  binaries are stripped),
+- some cosmetisc.
