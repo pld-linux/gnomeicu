@@ -6,15 +6,13 @@ Summary:	GnomeICU is a clone of Mirabilis' popular ICQ written with GTK+
 Summary(fr.UTF-8):	Programme pour la communication sur Internet
 Summary(pl.UTF-8):	GnomeICU - klon Mirabilis ICQ napisany z użyciem GTK+
 Name:		gnomeicu
-Version:	0.99.5
-Release:	2
+Version:	0.99.14
+Release:	1
 License:	GPL
 Vendor:		Jeremy Wise <jwise@pathwaynet.com>
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/gnomeicu/%{name}-%{version}.tar.bz2
-# Source0-md5:	59ff902171a14ad37896f6661ddedb7a
-Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-locale-names.patch
+# Source0-md5:	f5afc147590543f607a6b4efa0c69052
 URL:		http://gnomeicu.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -49,12 +47,9 @@ JavaICQ, które jest wolne i ma błędy.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-
-mv -f po/{no,nb}.po
 
 %build
+%{__intltoolize}
 glib-gettextize --copy --force
 %{__aclocal}
 %{__autoconf}
