@@ -17,7 +17,7 @@ URL:		http://gnomeicu.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdbm-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 %{?with_applet:BuildRequires:	gnome-panel-devel >= 2.0.0}
 BuildRequires:	gtk+2-devel >= 1:2.2.0
 %{?with_gtkspell:BuildRequires: gtkspell-devel >= 2.0.4}
